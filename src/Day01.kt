@@ -1,16 +1,14 @@
 fun main() {
     fun part1(input: List<String>): Int {
-        return input.map {line ->
-            ((line.findFirstDigit() ?: "") + (line.reversed().findFirstDigit() ?: "")).toInt()
-        }.reduce { acc, next -> acc + next }
+        return input
+                .map { ((it.findFirstDigit() ?: "") + (it.reversed().findFirstDigit() ?: "")).toInt() }
+                .reduce { acc, next -> acc + next }
     }
 
     fun part2(input: List<String>): Int {
         return input
-                .map {
-                    it.replaceWords()}
-                .map {line ->
-                    ((line.findFirstDigit() ?: "") + (line.reversed().findFirstDigit() ?: "")).toInt() }
+                .map { it.replaceWords()}
+                .map { ((it.findFirstDigit() ?: "") + (it.reversed().findFirstDigit() ?: "")).toInt() }
                 .reduce { acc, next -> acc + next }
     }
 
