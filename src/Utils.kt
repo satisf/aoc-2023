@@ -21,3 +21,6 @@ fun String.md5() = BigInteger(1, MessageDigest.getInstance("MD5").digest(toByteA
 fun Any?.println() = println(this)
 
 fun List<Int>.sumUp(): Int = this.reduce { acc, i -> acc + i }
+
+fun <E> Iterable<E>.indexesOf(e: E)
+        = mapIndexedNotNull{ index, elem -> index.takeIf{ elem == e } }
